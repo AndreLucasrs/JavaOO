@@ -1,0 +1,20 @@
+
+public class TesteReferencias {
+
+	public static void main(String[] args) {
+		Gerente funcionario = new Gerente();
+		
+		funcionario.setNome("Ze");
+		String nome = funcionario.getNome();
+		
+		Funcionario f = new Funcionario();
+		f.setSalario(2000);
+		
+		
+		ControleBonificacao controle = new ControleBonificacao();
+		controle.registra(funcionario);
+		
+		System.out.println(controle.getSoma());
+		
+	}
+}

@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class OrdenaString {
+	
+	public static void main(String[] args) {
+		
+		List<String> palavras = new ArrayList<>();
+		palavras.add("alura online");
+		palavras.add("casa do código");
+		palavras.add("caelum");
+		
+		//Projeto bytebank-herdado-conta
+		//no package teste.util
+		//classe TesteClaseAnonima, existe ja esses exemplos
+		Comparator<String> comp = new Comparator<String>() {
+			@Override
+			public int compare(String s1, String s2) {
+				//verifica s1 > s2 se s2 > s1 e se s1 == s2, ele ja ordena com isso
+				return s1.length() - s2.length();
+			}
+		};
+		
+		//java 1.7
+//		Collections.sort(palavras, comp);
+		
+		//java 1.8
+		palavras.sort(comp);
+		
+		System.out.println(palavras);
+		
+		// 1.7
+		for (String p : palavras) {
+			System.out.println(p);
+		}
+		
+		//1.8
+		palavras.forEach(action);
+		
+		Consumer<String> cons = new Consumer<String>() {
+
+			@Override
+			public void accept(String t) {
+				System.out.println(t);
+				
+			}
+			
+		};
+	}
+
+}

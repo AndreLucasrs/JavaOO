@@ -1,0 +1,20 @@
+package br.com.alura.curso.java8;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+
+public class Datas {
+
+	public static void main(String[] args) {
+		LocalDate hoje = LocalDate.now();
+		System.out.println(hoje);
+		
+		LocalDate olimpiadasRio = LocalDate.of(2018, Month.JUNE, 20);
+
+		Period periodo = Period.between(olimpiadasRio, hoje);
+		
+		System.out.println(anos);
+	}
+
+}

@@ -1,0 +1,11 @@
+package br.com.bytebank.banco.teste;
+
+import br.com.bytebank.banco.modelo.GuardadorContas;
+
+public class Teste {
+	
+	public static void main(String[] args) {
+		GuardadorContas guardador = new GuardadorContas();
+	}
+
+}

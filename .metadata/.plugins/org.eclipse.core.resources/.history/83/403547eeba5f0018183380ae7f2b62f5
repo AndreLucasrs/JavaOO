@@ -1,0 +1,21 @@
+package br.com.bytebank.banco.teste;
+
+public class TesteString {
+
+	public static void main(String[] args) {
+		
+		//Conheceremos um conceito fundamental da String: uma vez que foi criada,
+		//ela não moderá ser modificada posteriormente.
+		//Chamamos o conceito de um objeto de não pode ser alterado de imutabilidade
+		String nome = "Alura";//object literal
+		
+		//se vc quer alterar o valor vc tem que fazer dessa forma
+		nome = nome.replace("A", "a");
+		
+		nome.toLowerCase();
+		
+		System.out.println(nome);
+
+	}
+
+}

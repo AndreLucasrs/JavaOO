@@ -1,0 +1,18 @@
+package br.com.bytebank.banco.modelo;
+
+import java.util.Comparator;
+
+public class TitularContaComparatorOrdenar implements Comparator<Conta>{
+
+	/**
+	 * Esse metodo vai difinir que conta é maior do que a outra pelo numero da conta,
+	 * Modelo de ordenação do java 1.8
+	 */
+	@Override
+	public int compare(Conta c1, Conta c2) {
+		
+		String nomeC1 = c1.getTitular().getNome();
+		
+		return 0;
+	}
+}

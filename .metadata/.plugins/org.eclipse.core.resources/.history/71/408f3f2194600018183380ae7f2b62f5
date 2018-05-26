@@ -1,0 +1,11 @@
+package br.com.bytebank.banco.teste.util;
+
+public class TesteWrapperInteger {
+
+	public static void main(String[] args) {
+		
+		//Wrappers São classes que contém funcionalidades e encapsulam a variável de tipo primitivo!
+
+	}
+
+}

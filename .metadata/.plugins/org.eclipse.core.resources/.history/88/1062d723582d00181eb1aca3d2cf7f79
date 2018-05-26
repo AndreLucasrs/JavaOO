@@ -1,0 +1,11 @@
+
+public class TesteReferencias {
+
+	public static void main(String[] args) {
+		Funcionario funcionario = new Gerente();
+		
+		funcionario.setNome("Ze");
+		String nome = funcionario.getNome();
+		
+	}
+}

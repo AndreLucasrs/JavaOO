@@ -1,0 +1,8 @@
+
+public class ControleBonificacao {
+	
+	public void registra(Gerente g) {
+		
+	}
+
+}
