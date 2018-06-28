@@ -43,6 +43,7 @@ public class Curso {
 		//return aulas;
 		//dessa forma é a correta porque, a pessoa terar que usar o metodo adiciona
 		//e aqui ele esta retornando algo parecido como uma copia
+		//
 		return Collections.unmodifiableList(aulas);
 	}
 	
