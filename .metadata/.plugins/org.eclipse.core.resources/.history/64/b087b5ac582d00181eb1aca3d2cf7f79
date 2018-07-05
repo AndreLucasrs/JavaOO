@@ -1,7 +1,0 @@
-
-public class EditorVideo extends Funcionario{
-	
-	public double getBofinicacao() {
-		return super.getSalario() + super.getBonificacao();
-	}
-}
