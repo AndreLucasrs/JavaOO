@@ -1,8 +1,10 @@
 package br.com.alura;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class Curso {
 	
@@ -14,6 +16,8 @@ public class Curso {
 	//nesse caso quem for usar aulas pode usar um arrayList ou LinkedList, etc.
 	//temos um aproveitamento do polimorfismo
 	private List<Aula> aulas = new LinkedList<>();
+	
+	private Set<Aluno> alunos = new HashSet<>();
 	
 	//diferença de LinkedList e ArrayList, seria apenas de performace
 	//	Ela consegue fazer umas operações de maneira muito eficiente, como invocar o método get(indice). 
@@ -48,12 +52,21 @@ public class Curso {
 	}
 	
 	public void adiciona(Aula aula) {
+		//adiciona aula, lista
 		this.aulas.add(aula);
 	}
 	
 	public int getTempoTotal() {
 		//vai pegar todos tempo e ira somar
 		return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+	}
+	public void matricula(Aluno a1) {
+		//adiciona um novo aluno no curso, no conjunto
+		this.alunos.add(a1);
+	}
+	
+	public Set<Aluno> getAlunos() {
+		return Collections.unmodifiableSet(alunos);
 	}
 	
 	@Override
