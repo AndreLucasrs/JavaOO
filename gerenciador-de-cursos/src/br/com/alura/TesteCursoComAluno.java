@@ -20,6 +20,19 @@ public class TesteCursoComAluno {
 		
 		System.out.println("Todos os alunos matriculados: ");
 		javaColecoes.getAlunos().forEach(aluno -> System.out.println(aluno));
-
+		
+		System.out.println("O aluno "+a1+" esta matriculado?");
+		System.out.println(javaColecoes.estaMatriculado(a1));
+		
+		Aluno andre = new Aluno("André", 34672);
+		System.out.println("E esse André, esta matriculado?");
+		System.out.println(javaColecoes.estaMatriculado(andre));
+		
+		System.out.println("O a1 é equals ao andre");
+		System.out.println(a1.equals(andre));
+		
+		//isso abaixo sera true por causa do hashcode ser igual
+		System.out.println(a1.hashCode() == andre.hashCode());
+		 
 	}
 }

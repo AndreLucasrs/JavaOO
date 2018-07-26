@@ -73,4 +73,8 @@ public class Curso {
 	public String toString() {
 		return "[Curso: " +nome+ ", tempo total: "+this.getTempoTotal()+"]";
 	}
+	public boolean estaMatriculado(Aluno aluno) {
+		
+		return this.alunos.contains(aluno);
+	}
 }
