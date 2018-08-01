@@ -1,5 +1,8 @@
 package br.com.alura;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class TesteCursoComAluno {
 
 	public static void main(String[] args) {
@@ -33,6 +36,14 @@ public class TesteCursoComAluno {
 		
 		//isso abaixo sera true por causa do hashcode ser igual
 		System.out.println(a1.hashCode() == andre.hashCode());
+		
+		//Java Antes do 1.7
+		Set<Aluno> alunos = javaColecoes.getAlunos();
+		Iterator<Aluno> iterador = alunos.iterator();
+
+		while (iterador.hasNext()) {
+		    System.out.println(iterador.next());
+		}
 		 
 	}
 }

@@ -1,9 +1,12 @@
 package br.com.alura;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class Curso {
@@ -17,7 +20,14 @@ public class Curso {
 	//temos um aproveitamento do polimorfismo
 	private List<Aula> aulas = new LinkedList<>();
 	
+	//HashSet não mantem a ordem na hora de apresentar
+	//o LinkHashSet sim
+	//E nem adiciona objetos repetidos
 	private Set<Aluno> alunos = new HashSet<>();
+	
+	//para busca ele é mais perfomatico
+	//LinkedHashMap ele ira guarda a ordem das linhas na hora que for inserido, uma das diferenças do HashMap
+	private Map<Integer, Aluno> matriculaParaAluno = new HashMap<>();
 	
 	//diferença de LinkedList e ArrayList, seria apenas de performace
 	//	Ela consegue fazer umas operações de maneira muito eficiente, como invocar o método get(indice). 
@@ -29,6 +39,10 @@ public class Curso {
 	//Ela é muito rápida para adicionar e remover elementos na cabeça da lista, isso é, na primeira posição. 
 	//Mas ela é lenta se você precisar acessar um determinado elemento,
 	//pois a implementação precisará percorrer todos os elementos até chegar ao décimo quinto, por exemplo
+	
+	//sobre map
+	//Ela funciona da seguinte maneira, mapeia valores para chaves, e através da chave conseguimos acessar o valor correspondente. Por isso ela não pode ser repetida, ao contrário do valor, que podem existir iguais.
+	//Se uma chave for repetida, a antiga permanece, porém, o valor é sobrescrito pelo novo valor contido na chave passada, sendo o antigo valor "esquecido" pelo Map.
 	
 	public Curso(String nome, String instrutor) {
 		this.nome = nome;
@@ -60,9 +74,10 @@ public class Curso {
 		//vai pegar todos tempo e ira somar
 		return this.aulas.stream().mapToInt(Aula::getTempo).sum();
 	}
-	public void matricula(Aluno a1) {
+	public void matricula(Aluno aluno) {
 		//adiciona um novo aluno no curso, no conjunto
-		this.alunos.add(a1);
+		this.alunos.add(aluno);
+		this.matriculaParaAluno.put(aluno.getNumeroMatricula(), aluno);
 	}
 	
 	public Set<Aluno> getAlunos() {
@@ -76,5 +91,10 @@ public class Curso {
 	public boolean estaMatriculado(Aluno aluno) {
 		
 		return this.alunos.contains(aluno);
+	}
+	public Aluno buscaMatriculado(int numero) {
+		if(!matriculaParaAluno.containsKey(numero))
+			throw new NoSuchElementException();
+		return matriculaParaAluno.get(numero);
 	}
 }
